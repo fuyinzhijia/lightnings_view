@@ -1,0 +1,18 @@
+.fyt.title{height:1.5rem;}
+.subscribe{position:absolute; right:1rem;width:3rem;height:1rem;top:1.2rem; -moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;background-color:blue;font-size:.7rem;line-height:1rem;text-align: center;color:#FFFFFF; }
+.content.fytmain{top:2.4rem; }
+.bar.bar-nav.highter{height:2.5rem;background-color:#FFFFFF;}
+
+
+.bar.bar-nav.highter .icon{line-height: 1.7rem;}
+
+.panel.panel-left.panel-reveal.zbl{background-color:#FFFFFF; border-right: 1px solid #DEDEDE;}
+
+.switchbuttons{width:10rem;height:1.5rem;margin:0.7rem auto;border:1px solid blue;}
+
+.switchbuttons .tab.recent,.switchbuttons .tab.hot{width:50%;height:100%;float:left;line-height:1.5rem; font-size: 0.75rem;text-align: center;color:blue;}
+
+.switchbuttons .tab.recent.actived,.switchbuttons .tab.hot.actived{background-color:blue; color:#FFFFFF;}
+
+.articletitle{color:blue; font-size:1rem;margin-bottom: 0;}
+.card-content .articlecontent{margin-bottom: 0;margin-top: 0;}

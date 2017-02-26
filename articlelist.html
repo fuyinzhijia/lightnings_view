@@ -1,51 +1,88 @@
-<div class="switchbuttons">
-    <div class="tab recent actived">最近</div>
-    <div class="tab hot">最热</div>
-    
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<div  id="info">
-    <div class="card demo-card-header-pic">
-      <div valign="bottom" class="card-header color-white no-border no-padding">
-        <img class='card-cover' src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" alt="">
-      </div>
-      <div class="card-content">
-        <div class="card-content-inner">
-          <p class="articletitle">标题</p>
-          
-          <p class=“articlecontent”>此处是内容...</p>
-        </div>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="link">赞</a>
-        <a href="#" class="link">更多</a>
-      </div>
-    </div>
-  
- </div>
-</div>
-</div>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>福音堂</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/light7.min.css">
+		<link rel="stylesheet" href="css/light7-swiper.css">
+		<link rel="stylesheet" href="css/fyt.css">
+
+		<!--<link rel="stylesheet" href="css/fyt.css">-->
+		<script type='text/javascript' src='js/jquery-1.8.3.min.js' charset='utf-8'></script>
+		<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+		<script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/fyt.config.js' charset='utf-8'></script>
+	</head>
+	<body>
+
+	<!-- page 容器 -->
+		<div class="page">
+		  <!-- 标题栏 -->
+		  	<header class="bar bar-nav highter">
+		  		<a class="icon icon-menu pull-left open-panel"></a>
+    			<h1 class="fyt title">文章集</h1>
+    			<div class="subscribe">订阅</div>  
+		  	</header>
+
+		  <!-- 工具栏 -->
+		  <nav class="bar bar-tab">
+		    <a class="tab-item active" href="#">
+		      <span class="icon icon-home"></span>
+		      <span class="tab-label">首页</span>
+		    </a>
+		    <a class="tab-item" href="#">
+		      <span class="icon icon-star"></span>
+		      <span class="tab-label">订阅</span>
+		    </a>
+		    <a class="tab-item" href="#">
+		      <span class="icon icon-me"></span>
+		      <span class="tab-label">个人</span>
+		    </a>
+		  </nav>
+		  <!-- 这里是页面内容区 -->
+		  	<div class="content fytmain">
+		  		<div class="switchbuttons">
+    				<div class="tab recent actived">最近</div>
+    				<div class="tab hot">最热</div>
+				</div>
+		  		<div id="info">
+				</div>
+		  	</div>
+		</div>
+		<!-- popup, panel 等放在这里 -->
+		<div class="panel-overlay"></div>
+		<!-- Left Panel with Reveal effect --> 
+
+		<div id="info">
+
+		</div>
+		
+	</body>
+</html>
 <script type="text/javascript">
-  $(".switchbuttons .tab").click(function(){
-    $(".switchbuttons .tab").removeClass("actived");
-    $(this).addClass("actived");
-  })
 
+$(".switchbuttons .tab").click(function(){
+	$(".switchbuttons .tab").removeClass("actived");
+	$(this).addClass("actived");
+})
 
 function loadInfo() {
-  $.getJSON("http://localhost/lightnings_api/public/index.php?func=articlelist&param=1", function(data) {
-    $("#info").html("");//清空info内容
-   // alert("star");
+  $.getJSON(api_artical_list, function(data) {
+    $("#info").html("");
     $.each(data.data, function(i, item) {
       $("#info").append(
-         
       '<div class="card demo-card-header-pic">'+
       '<div valign="bottom" class="card-header color-white no-border no-padding">'+
       '<img class="card-cover" src="'+ item.cover_photo+'" alt="">'+
       '</div><div class="card-content">'+
         '<div class="card-content-inner">'+
          '<p class="articletitle">'+ item.article_title +'</p>'+
-          
           '<p class=“articlecontent”>'+ item.article_content +'</p>'+
         '</div>'+
       '</div>'+
@@ -57,9 +94,5 @@ function loadInfo() {
     });
     });
 }
-
-
-loadInfo();
-
-
+loadInfo();    
 </script>
